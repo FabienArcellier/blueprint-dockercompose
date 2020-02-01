@@ -1,0 +1,8 @@
+version: '3'
+services:
+  database:
+    build:
+      context: image/database
+      dockerfile: Dockerfile # optional
+    environment: []
+    volumes: []

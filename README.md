@@ -1,8 +1,17 @@
-# Blueprint Application Docker
+# Blueprint Dockercompose
 
-[![Build Status]()
+[![ci](https://github.com/FabienArcellier/blueprint-dockercompose/actions/workflows/main.yml/badge.svg)](https://github.com/FabienArcellier/blueprint-dockercompose/actions/workflows/main.yml)
 
-A blueprint to implement docker based application
+Blueprint Dockercompose provides an environment to build a stack based on docker-compose.
+
+It make easier activities as :
+
+* organize a lab with students
+* provision a developer environment for new joiners
+* test a collection of images
+* ...
+
+Ce blueprint teste les containers de la stack avec `pytest` & `testinfra`.
 
 ## Getting started
 
@@ -13,28 +22,26 @@ A blueprint to implement docker based application
 You can find the latest version to ...
 
 ```bash
-git clone https://github.com/FabienArcellier/blueprint-application-docker.git
+git clone https://github.com/FabienArcellier/blueprint-dockercompose.git
 ```
 
 ### Usage with spikestarter
 
 ```bash
-spike-starter --template https://github.com/FabienArcellier/blueprint-application-docker.git myproject
+spike-starter --template https://github.com/FabienArcellier/blueprint-dockercompose.git myproject
 ```
 
 * [spike-starter](https://pypi.org/project/spike-starter/)
 
 ## Continuous integration
 
-more information in [.travis.yml](.travis.yml)
+more information in [.github/workflow/main.yml](.github/workflows/main.yml)
 
 ### Automatic testing on developer computer
 
 ```
-virtualenv -p python3 venv
-source venv/bin/activate
-pip install -r requirement-dev.txt
-python -m unittest discover .
+poetry install
+poetry run pytest
 ```
 
 ## References
