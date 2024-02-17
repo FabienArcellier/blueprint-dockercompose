@@ -1,8 +1,11 @@
-version: '3'
+version: '3.8'
 services:
   database:
     build:
-      context: image/database
-      dockerfile: Dockerfile # optional
+      context: images/redis
+      dockerfile: Dockerfile
     environment: []
     volumes: []
+    #  - ./app:/app # mount the ./app folder in the /app folder of the container
+    ports: []
+    #  - 8080:8080
